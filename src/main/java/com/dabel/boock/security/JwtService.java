@@ -45,7 +45,7 @@ public class JwtService {
         return generateToken(new HashMap<>(), userDetails);
     }
 
-    private String generateToken(
+    public String generateToken(
             HashMap<String, Object> claims,
             UserDetails userDetails
     ) {

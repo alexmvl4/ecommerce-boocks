@@ -11,15 +11,8 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class RegistrationRequest {
 
-    @NotEmpty(message = "firstname es requerido")
-    @NotBlank(message = "firstname es requerido")
-    private String firstname;
-
-    @NotEmpty(message = "lastname es requerido")
-    @NotBlank(message = "lastname es requerido")
-    private String lastname;
+public class AuthenticationRequest {
 
     @Email(message = "Email is not formmatted")
     @NotEmpty(message = "email es requerido")

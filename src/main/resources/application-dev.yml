@@ -1,9 +1,10 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/book_social_network
-    username: username
-    password: password
+    username: dev
+    password: 123
     driver-class-name: org.postgresql.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -11,13 +12,12 @@ spring:
     properties:
       hibernate:
         format_sql: true
-      database: postgresql
-      database-plataform: org.hibernate.dialect.PostgreSLDialect
-
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
   mail:
     host: localhost
-    ports: 1025
+    port: 1025
     username: ali
     password: ali
     properties:
@@ -31,11 +31,15 @@ spring:
         timeout: 3000
         writetimeout: 5000
 
-  aplication:
-    security:
-      jwt:
-        secret-key: 63f4945d921d599f27ae4fdf5bada3f1
-        expiration: 8640000
-    mailing:
-      frontend:
-        activation-url: http://localhost:4200/activate-account
+server:
+  port: 8088
+
+application:
+  security:
+    jwt:
+      expiration: 86400000
+      secret-key: "1234567890123456789012345678901234567890123456789012345678901234"
+
+  mailing:
+    frontend:
+      activation-url: "http://localhost:4200/activate-account"

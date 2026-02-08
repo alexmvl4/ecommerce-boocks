@@ -26,7 +26,7 @@ import static java.util.Arrays.stream;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = " user")
+@Table(name = "users")
 @EntityListeners(AuditingEntityListener.class)
 
 public class User implements UserDetails, Principal {
@@ -49,9 +49,11 @@ public class User implements UserDetails, Principal {
     @CreatedDate
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdDate;
+
     @LastModifiedDate
-    @Column(nullable = false, updatable = false)
+    @Column(nullable = false)
     private LocalDateTime lastModifiedDate;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
